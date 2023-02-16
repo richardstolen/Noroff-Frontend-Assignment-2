@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
-
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const apiURL = "https://rs-lost-in-translation-api-production.up.railway.app";
+  const apiKey =
+    "uaxHSSnPmAp7LlijwMDezv2WXYbg1zx25YSdlzdB7zrOc83KvXE09y2ueIm5QCtV";
+
+  fetch(`${apiURL}/translations`, {
+    method: "POST",
+    headers: {
+      "X-API-Key": apiKey,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      username: "mega-mind",
+      translations: [],
+    }),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Could not create new user");
+      }
+      console.log(response.json());
+    })
+    .then((newUser) => {
+      // newUser is the new user with an id
+    })
+    .catch((error) => {});
+  return <div className="App"></div>;
 }
 
 export default App;
