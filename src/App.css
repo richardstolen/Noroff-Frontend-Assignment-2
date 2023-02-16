@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #c6ebbe;
+}
+
+#header {
+  height: 250px;
+  background: #7ca5b8;
+  color: white;
+}
