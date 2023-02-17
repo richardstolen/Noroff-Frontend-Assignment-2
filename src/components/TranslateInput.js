@@ -10,11 +10,13 @@ import "../App.css";
 function TranslateInput(props) {
   const [input, setInput] = useState("");
 
-  function click() {
-    console.log(input);
+  function handleKeyPress(target) {
+    if (target.charCode == 13) {
+      console.log(input);
+    }
   }
   return (
-    <>
+    <form onSubmit={(e) => props.submit(e, input)}>
       <InputGroup>
         <Form.Control
           name="input"
@@ -23,14 +25,14 @@ function TranslateInput(props) {
           onChange={(e) => setInput(e.target.value)}
         />
         <Button
-          onClick={() => props.submit(input)}
+          onClick={(e) => props.submit(e, input)}
           variant="outline-secondary"
           id="button-addon2"
         >
-          Button
+          <span id="arrow">&#x2192;</span>
         </Button>
       </InputGroup>
-    </>
+    </form>
   );
 }
 

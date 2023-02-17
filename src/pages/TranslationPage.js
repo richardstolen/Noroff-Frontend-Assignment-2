@@ -8,8 +8,13 @@ import Col from "react-bootstrap/Col";
 function TranslationPage() {
   const [input, setInput] = useState("");
 
-  function submit(input) {
-    setInput(input);
+  function submit(event, input) {
+    event.preventDefault();
+    if (input.length <= 40) {
+      setInput(input);
+    } else {
+      alert("Max limit is 40 characters");
+    }
   }
   return (
     <div>
