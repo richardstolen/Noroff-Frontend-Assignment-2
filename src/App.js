@@ -1,15 +1,9 @@
 import React from "react";
 import "./App.css";
+import TranslationPage from "./pages/TranslationPage";
 
 function App() {
-  return (
-    <div
-      className="
-    App"
-    >
-      <div id="header"></div>
-    </div>
-  );
+  return <TranslationPage></TranslationPage>;
 }
 
 export default App;

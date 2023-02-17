@@ -12,3 +12,14 @@ body {
   background: #7ca5b8;
   color: white;
 }
+
+.input-group {
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+}
+
+.form-control {
+  width: 50% !important;
+  border-radius: 50px;
+}
