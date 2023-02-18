@@ -21,36 +21,40 @@ body {
   padding-left: 20px;
   justify-content: center;
   align-items: center;
-  margin: 0px auto;
+  margin: auto;
   margin-top: 100px;
   margin-bottom: 50px;
-  background-color: #3b97d3;
+  box-shadow: inset 0px 0px 0px 10px #ecf0f1;
+  border: 40px solid #ecf0f1;
   border-radius: 50px;
-  border: 1px solid #ffc5dd;
+  padding: 0px;
 }
 
 .form-control {
   width: 100%;
-  height: 54px;
+  height: 55px;
   background: none;
   border: 0;
   padding: 0;
   outline: none;
   color: white;
   font-size: 30px;
-  text-indent: 2%;
+  padding-left: 20px;
+  padding-right: 65px;
+  background-color: #3b97d3;
+  border-radius: 50px;
+  border: 1px solid #ffc5dd;
 }
 
 #button-addon2 {
-  height: 54px;
-  width: 70px;
+  position: absolute;
+  height: 45px;
+  width: 50px;
   background-color: #ecf0f1;
-  color: #ffffff;
-  text-transform: uppercase;
   border-style: none;
   border-radius: 50px;
+  margin-left: 530px;
   cursor: pointer;
-  outline: none;
 }
 
 .translationImages {

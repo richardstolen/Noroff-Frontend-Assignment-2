@@ -12,13 +12,14 @@ function TranslateOutput(props) {
     }
   }
 
-  const listItems = translations.map((t) => <img key={uuid()} src={t}></img>);
-  const graphImage = require("../assets/individial_signs/" + "a" + ".png");
+  const translationsList = translations.map((t) => (
+    <img key={uuid()} src={t}></img>
+  ));
 
   return (
     <div>
       <div className="box"></div>
-      <div className="translationImages">{listItems}</div>
+      <div className="translationImages">{translationsList}</div>
     </div>
   );
 }
