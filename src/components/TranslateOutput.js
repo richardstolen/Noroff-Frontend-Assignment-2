@@ -12,8 +12,8 @@ function TranslateOutput(props) {
     }
   }
 
-  const translationsList = translations.map((t) => (
-    <img key={uuid()} src={t}></img>
+  const translationsList = translations.map((t, i) => (
+    <img key={i} src={t}></img>
   ));
 
   return (

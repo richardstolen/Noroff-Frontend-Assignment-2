@@ -6,7 +6,7 @@ async function TranslateAPI(input) {
 
   const user = await getTranslationByUsername();
   await fetch(`${apiURL}/translations/${user.id}`, {
-    method: "PATCH", // NB: Set method to PATCH
+    method: "PATCH",
     headers: {
       "X-API-Key": apiKey,
       "Content-Type": "application/json",
