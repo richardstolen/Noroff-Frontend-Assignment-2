@@ -1,7 +1,48 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import InputGroup from "react-bootstrap/InputGroup";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import "../App.css";
+import { useUser } from "../components/UserContext";
 
-function LoginPage() {
-  return <div>LoginPage</div>;
+function LoginPage(props) {
+  const { user, setUser } = useUser();
+
+  const [input, setInput] = useState("");
+
+  function login(e, input) {
+    e.preventDefault();
+    if (input) {
+      setUser(input);
+      sessionStorage.setItem("user", input);
+    } else {
+      alert("Invalid input");
+    }
+  }
+
+  return (
+    <form
+      onSubmit={(e) => {
+        login(e, input);
+      }}
+    >
+      <InputGroup>
+        <Form.Control
+          name="input"
+          placeholder="What's your name?"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+        />
+        <Button
+          onClick={(e) => login(e, input)}
+          variant="outline-secondary"
+          id="button-addon2"
+        >
+          <span id="arrow">&#x2192;</span>
+        </Button>
+      </InputGroup>
+    </form>
+  );
 }
 
 export default LoginPage;
