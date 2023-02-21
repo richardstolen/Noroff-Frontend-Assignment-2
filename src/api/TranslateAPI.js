@@ -33,6 +33,7 @@ async function getTranslationByUsername(username) {
   await fetch(`${apiURL}/translations?username=${username}`)
     .then((response) => response.json())
     .then((results) => {
+      console.log(results);
       result = results[0];
       // results will be an array of users that match the username of victor.
     })

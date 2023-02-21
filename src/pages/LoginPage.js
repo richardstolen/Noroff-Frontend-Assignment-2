@@ -14,26 +14,14 @@ function LoginPage() {
   async function login(e, usernameInput) {
     e.preventDefault();
     if (usernameInput) {
-      // const fetchUser = async () => {
-      //   const data = await loginUser(usernameInput).then((user) => user);
+      let userObject = await loginUser(usernameInput);
 
-      //   return data;
-      // };
-      // console.log(fetchUser());
-      let getUser = await loginUser(usernameInput)
-        .then((results) => {
-          return results[0];
-        })
-        .catch((error) => {});
-
-      if (!getUser) {
-        getUser = await createUser(usernameInput).then((newUser) => {
-          return newUser;
-        });
-        console.log(getUser);
+      if (!userObject) {
+        alert("Something went wrong, try again!");
+      } else {
+        setUser(userObject.username);
+        sessionStorage.setItem("user", userObject.username);
       }
-      setUser(getUser.username);
-      sessionStorage.setItem("user", getUser.username);
     } else {
       alert("Invalid input");
     }

@@ -1,66 +1,42 @@
-import { getUser } from "./GetUserAPI";
+import API from "./apiHelper";
 
 const apiURL = process.env.REACT_APP_API_URL;
 const apiKey = process.env.REACT_APP_API_KEY;
 
 export async function loginUser(input) {
-  const user = await getTranslationByUsername(input);
-  console.log(user);
-  let a = false;
-  if (!user & a) {
-    await fetch(`${apiURL}/translations`, {
-      method: "POST",
-      headers: {
-        "X-API-Key": apiKey,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        username: input,
-        translations: [],
-      }),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Could not create new user");
-        }
-        return response.json();
-      })
-      .then((newUser) => {
-        console.log(newUser);
-        user = newUser;
-      })
-      .catch((error) => {});
+  let user = await API.getUser(input);
+
+  if (!user) {
+    // If no user exists with the given username, create a new user
+    user = await API.createUser(input);
   }
+
   return user;
 }
 
-export async function createUser(input) {
-  return await fetch(`${apiURL}/translations`, {
-    method: "POST",
-    headers: {
-      "X-API-Key": apiKey,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      username: input,
-      translations: [],
-    }),
-  })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Could not create new user");
-      }
-      return response.json();
-    })
+// async function createUser(input) {
+//   const response = await fetch(`${apiURL}/translations`, {
+//     method: "POST",
+//     headers: {
+//       "X-API-Key": apiKey,
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify({
+//       username: input,
+//       translations: [],
+//     }),
+//   });
 
-    .catch((error) => {});
-}
+//   if (response.ok) {
+//     const user = await response.json();
+//     return user;
+//   }
+// }
 
-async function getTranslationByUsername(username) {
-  let result = [];
-  return await fetch(`${apiURL}/translations?username=${username}`).then(
-    (response) => response.json()
-  );
-
-  return result;
-}
+// export async function getUser(username) {
+//   const response = await fetch(`${apiURL}/translations?username=${username}`);
+//   if (response.ok) {
+//     const user = await response.json();
+//     return user[0];
+//   }
+// }

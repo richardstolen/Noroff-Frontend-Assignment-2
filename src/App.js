@@ -22,12 +22,12 @@ function App() {
   }, [navigate, user]);
 
   return (
-    <>
+    <div className="App">
       <Routes>
         <Route path="/" element={<TranslationPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>
-    </>
+    </div>
   );
 }
 
