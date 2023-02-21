@@ -23,7 +23,6 @@ function App() {
 
   return (
     <>
-      <p>{user}</p>
       <Routes>
         <Route path="/" element={<TranslationPage />} />
         <Route path="/login" element={<LoginPage />} />

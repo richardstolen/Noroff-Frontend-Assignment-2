@@ -13,7 +13,7 @@ function TranslateOutput(props) {
   }
 
   const translationsList = translations.map((t, i) => (
-    <img key={i} src={t}></img>
+    <img className="translationImage" key={i} src={t}></img>
   ));
 
   return (

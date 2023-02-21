@@ -6,16 +6,6 @@ import UserProvider from "./components/UserContext";
 import TranslationPage from "./pages/TranslationPage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-const setAuth = (data) => {
-  if (data) {
-    sessionStorage.setItem("username", data.username);
-    sessionStorage.setItem("isAdmin", data.isAdmin);
-    console.log("Data in setAuth: ", data);
-  } else {
-    sessionStorage.setItem("username", null);
-    sessionStorage.setItem("isAdmin", null);
-  }
-};
 root.render(
   <React.StrictMode>
     <UserProvider>

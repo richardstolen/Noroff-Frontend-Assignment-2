@@ -10,29 +10,31 @@ import "../App.css";
 function TranslateInput(props) {
   const [input, setInput] = useState("");
 
-  function handleKeyPress(target) {
-    if (target.charCode == 13) {
-      console.log(input);
-    }
-  }
   return (
-    <form onSubmit={(e) => props.submit(e, input)}>
-      <InputGroup>
-        <Form.Control
-          name="input"
-          placeholder="What do you want to translate?"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-        />
-        <Button
-          onClick={(e) => props.submit(e, input)}
-          variant="outline-secondary"
-          id="button-addon2"
-        >
-          <span id="arrow">&#x2192;</span>
-        </Button>
-      </InputGroup>
-    </form>
+    <>
+      <img
+        id="translationPageBear"
+        src={require("../assets/bear_big.png")}
+        alt="notsas found"
+      />
+      <form onSubmit={(e) => props.submit(e, input)}>
+        <InputGroup>
+          <Form.Control
+            name="input"
+            placeholder="What do you want to translate?"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+          />
+          <Button
+            onClick={(e) => props.submit(e, input)}
+            variant="outline-secondary"
+            id="button-addon2"
+          >
+            <span id="arrow">&#x2192;</span>
+          </Button>
+        </InputGroup>
+      </form>
+    </>
   );
 }
 

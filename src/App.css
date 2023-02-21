@@ -4,6 +4,12 @@
   font-family: "Comic Sans MS";
 }
 
+p {
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  color: white;
+}
+
 body {
   height: 77vh;
   background: linear-gradient(
@@ -13,6 +19,7 @@ body {
     #7ca5b8 70%,
     #7ca5b8
   );
+  z-index: 1;
 }
 
 /* body {
@@ -84,8 +91,19 @@ body {
   width: 700px;
 }
 
-img {
+.translationImage {
   width: 70px;
+}
+
+#translationPageBear {
+  display: flex;
+  position: fixed;
+  width: 130px;
+  z-index: -1;
+  top: 2%;
+  left: 24%;
+  right: 0;
+  transform: rotate(-12deg);
 }
 
 #arrow {
