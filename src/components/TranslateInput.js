@@ -10,11 +10,6 @@ import "../App.css";
 function TranslateInput(props) {
   const [input, setInput] = useState("");
 
-  function handleKeyPress(target) {
-    if (target.charCode == 13) {
-      console.log(input);
-    }
-  }
   return (
     <form onSubmit={(e) => props.submit(e, input)}>
       <InputGroup>

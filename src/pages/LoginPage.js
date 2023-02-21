@@ -4,17 +4,36 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "../App.css";
 import { useUser } from "../components/UserContext";
+import { createUser, loginUser } from "../api/LoginAPI";
 
-function LoginPage(props) {
+function LoginPage() {
   const { user, setUser } = useUser();
 
   const [input, setInput] = useState("");
 
-  function login(e, input) {
+  async function login(e, usernameInput) {
     e.preventDefault();
-    if (input) {
-      setUser(input);
-      sessionStorage.setItem("user", input);
+    if (usernameInput) {
+      // const fetchUser = async () => {
+      //   const data = await loginUser(usernameInput).then((user) => user);
+
+      //   return data;
+      // };
+      // console.log(fetchUser());
+      let getUser = await loginUser(usernameInput)
+        .then((results) => {
+          return results[0];
+        })
+        .catch((error) => {});
+
+      if (!getUser) {
+        getUser = await createUser(usernameInput).then((newUser) => {
+          return newUser;
+        });
+        console.log(getUser);
+      }
+      setUser(getUser.username);
+      sessionStorage.setItem("user", getUser.username);
     } else {
       alert("Invalid input");
     }

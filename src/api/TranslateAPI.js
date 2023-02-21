@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 
-async function TranslateAPI(input) {
-  const apiURL = process.env.API_URL;
-  const apiKey = process.env.API_KEY;
+const apiURL = process.env.REACT_APP_API_URL;
+const apiKey = process.env.REACT_APP_API_KEY;
 
-  const user = await getTranslationByUsername();
+async function TranslateAPI(username, input) {
+  if (!input || input === "") {
+    return;
+  }
+  const user = await getTranslationByUsername(username);
   await fetch(`${apiURL}/translations/${user.id}`, {
     method: "PATCH",
     headers: {
@@ -25,9 +28,7 @@ async function TranslateAPI(input) {
     .catch((error) => {});
 }
 
-async function getTranslationByUsername() {
-  const apiURL = "https://rs-lost-in-translation-api-production.up.railway.app";
-  const username = "dewaldels";
+async function getTranslationByUsername(username) {
   let result = [];
   await fetch(`${apiURL}/translations?username=${username}`)
     .then((response) => response.json())

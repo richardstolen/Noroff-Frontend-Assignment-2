@@ -5,15 +5,17 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import TranslateAPI, { getTranslationByUsername } from "../api/TranslateAPI";
+import { useUser } from "../components/UserContext";
 
 function TranslationPage() {
   const [input, setInput] = useState("");
+  const { user, setUser } = useUser();
 
   function submit(event, input) {
     event.preventDefault();
     if (input.length <= 40) {
       setInput(input);
-      //TranslateAPI(input, 2);
+      TranslateAPI(user, input);
     } else {
       alert("Max limit is 40 characters");
     }
