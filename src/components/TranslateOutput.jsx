@@ -6,9 +6,14 @@ function TranslateOutput(props) {
   if (props.input) {
     const letters = props.input.split("");
     for (const letter of letters) {
-      translations.push(
-        require("../assets/individial_signs/" + letter.toLowerCase() + ".png")
-      );
+      if (letter === " ") {
+        require("../assets/individial_signs/empty.png");
+        translations.push(require("../assets/individial_signs/empty.png"));
+      } else {
+        translations.push(
+          require("../assets/individial_signs/" + letter.toLowerCase() + ".png")
+        );
+      }
     }
   }
 

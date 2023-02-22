@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form";
 import "../App.css";
 import { useUser } from "../components/UserContext";
 import { createUser, loginUser } from "../api/LoginAPI";
+import LoginPageHeader from "../components/LoginPageHeader";
 
 function LoginPage() {
   const { user, setUser } = useUser();
@@ -28,27 +29,30 @@ function LoginPage() {
   }
 
   return (
-    <form
-      onSubmit={(e) => {
-        login(e, input);
-      }}
-    >
-      <InputGroup>
-        <Form.Control
-          name="input"
-          placeholder="What's your name?"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-        />
-        <Button
-          onClick={(e) => login(e, input)}
-          variant="outline-secondary"
-          id="button-addon2"
-        >
-          <span id="arrow">&#x2192;</span>
-        </Button>
-      </InputGroup>
-    </form>
+    <>
+      <LoginPageHeader />
+      <form
+        onSubmit={(e) => {
+          login(e, input);
+        }}
+      >
+        <InputGroup className="animate__animated animate__fadeIn">
+          <Form.Control
+            name="input"
+            placeholder="What's your name?"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+          />
+          <Button
+            onClick={(e) => login(e, input)}
+            variant="outline-secondary"
+            id="button-addon2"
+          >
+            <div className="arrow"></div>
+          </Button>
+        </InputGroup>
+      </form>
+    </>
   );
 }
 

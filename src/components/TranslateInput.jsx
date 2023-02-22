@@ -6,35 +6,32 @@ import InputGroup from "react-bootstrap/InputGroup";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "../App.css";
+import "animate.css";
 
 function TranslateInput(props) {
   const [input, setInput] = useState("");
 
   return (
-    <>
-      <img
-        id="translationPageBear"
-        src={require("../assets/bear_big.png")}
-        alt="notsas found"
-      />
-      <form onSubmit={(e) => props.submit(e, input)}>
-        <InputGroup>
-          <Form.Control
-            name="input"
-            placeholder="What do you want to translate?"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-          />
-          <Button
-            onClick={(e) => props.submit(e, input)}
-            variant="outline-secondary"
-            id="button-addon2"
-          >
-            <span id="arrow">&#x2192;</span>
-          </Button>
-        </InputGroup>
-      </form>
-    </>
+    <form
+      onSubmit={(e) => props.submit(e, input)}
+      className="animate__animated animate__fadeInUp"
+    >
+      <InputGroup>
+        <Form.Control
+          name="input"
+          placeholder="What do you want to translate?"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+        />
+        <Button
+          onClick={(e) => props.submit(e, input)}
+          variant="outline-secondary"
+          id="button-addon2"
+        >
+          <div className="arrow"></div>
+        </Button>
+      </InputGroup>
+    </form>
   );
 }
 

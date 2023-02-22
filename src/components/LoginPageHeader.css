@@ -1,0 +1,60 @@
+.body {
+  background: linear-gradient(
+    to top,
+    #c6ebbe,
+    #c6ebbe 50%,
+    #7ca5b8 55%,
+    #7ca5b8
+  );
+  background-attachment: fixed;
+  z-index: 1;
+}
+
+.login-header-row {
+  display: flex;
+  flex-direction: row;
+  width: 700px;
+  margin: auto;
+  gap: 60px;
+  margin-top: 70px;
+}
+
+.login-header-column-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 120px;
+}
+
+.login-header-column-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 470px;
+}
+
+.row-1 {
+  justify-content: flex-start;
+  color: white;
+  font-size: 35px;
+}
+.row-2 {
+  justify-content: flex-start;
+  text-align: left;
+  color: white;
+  font-size: 25px;
+}
+#loginPageBear {
+  display: flex;
+  z-index: -1;
+  width: 150px;
+  position: relative;
+  margin-bottom: -5px;
+  transform: rotate(-12deg);
+  /* 
+  
+  top: 1px;
+ 
+  right: 0;
+   */
+}

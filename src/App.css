@@ -4,54 +4,29 @@
   font-family: "Comic Sans MS";
 }
 
-p {
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
-  color: white;
-}
-
 body {
-  height: 77vh;
   background: linear-gradient(
     to top,
     #c6ebbe,
     #c6ebbe 60%,
-    #7ca5b8 70%,
+    #7ca5b8 65%,
     #7ca5b8
   );
+  background-attachment: fixed;
   z-index: 1;
-}
-
-/* body {
-  background-image: linear-gradient(
-    to bottom,
-    orange,
-    orange 50%,
-    green 50%,
-    green
-  );
-  background-size: cover;
-  background-repeat: no-repeat;
-} */
-
-#header {
-  height: 250px;
-  background: #7ca5b8;
-  color: white;
 }
 
 .input-group {
   display: flex;
-  width: 600px;
+  width: 620px;
   padding: 4px;
   padding-left: 20px;
   justify-content: center;
   align-items: center;
   margin: auto;
-  margin-top: 130px;
   margin-bottom: 30px;
   box-shadow: inset 0px 0px 0px 10px #ecf0f1;
-  border: 30px solid #ecf0f1;
+  border: 20px solid #ecf0f1;
   border-radius: 30px;
   padding: 0px;
 }
@@ -64,7 +39,7 @@ body {
   padding: 0;
   outline: none;
   color: white;
-  font-size: 30px;
+  font-size: 25px;
   padding-left: 20px;
   padding-right: 65px;
   background-color: #3b97d3;
@@ -75,11 +50,11 @@ body {
 #button-addon2 {
   position: absolute;
   height: 45px;
-  width: 50px;
+  width: 48px;
   background-color: #ecf0f1;
   border-style: none;
   border-radius: 50px;
-  margin-left: 530px;
+  margin-left: 555px;
   cursor: pointer;
 }
 
@@ -88,6 +63,7 @@ body {
   flex-wrap: wrap;
   text-align: center;
   margin: 0px auto;
+  margin-top: 5%;
   width: 700px;
 }
 
@@ -106,11 +82,41 @@ body {
   transform: rotate(-12deg);
 }
 
-#arrow {
-  display: inline-block;
-  font-family: arial;
-  font-size: 20px;
-  margin-bottom: 10%;
-  transform: scale(2, 2);
-  color: black;
+.arrow {
+  width: 35px;
+  height: 25px;
+  display: grid;
+  overflow: hidden;
+  margin-left: 17%;
+}
+.arrow:before,
+.arrow:after {
+  content: "";
+  grid-area: 1/1;
+  background: #3b97d3;
+  clip-path: polygon(
+    0 10px,
+    calc(100% - 15px) 10px,
+    calc(100% - 15px) 0,
+    100% 50%,
+    calc(100% - 15px) 100%,
+    calc(100% - 15px) calc(100% - 10px),
+    0 calc(100% - 10px)
+  );
+}
+.arrow:hover:before,
+.arrow:hover:after {
+  animation: arrow 1s infinite;
+  transform: translate(calc(0% + var(--s, 0%)));
+}
+
+.arrow:hover:after {
+  --s: -100%;
+}
+
+@keyframes arrow {
+  80%,
+  100% {
+    transform: translate(calc(100% + var(--s, 0%)));
+  }
 }
