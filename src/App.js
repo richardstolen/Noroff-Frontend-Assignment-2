@@ -26,6 +26,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/logout" element={<Logout />} />
+        <Route path="*" element={<LoginPage />} />
         <Route path="/" element={<TranslationPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>
