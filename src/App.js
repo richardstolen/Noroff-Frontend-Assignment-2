@@ -20,7 +20,7 @@ function App() {
       setUser(sessionUser);
       navigate("/");
     }
-  }, []);
+  }, [user, sessionUser, setUser]);
 
   return (
     <div className="App">
