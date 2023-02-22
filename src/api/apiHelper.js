@@ -1,5 +1,3 @@
-import React from "react";
-
 const apiURL = process.env.REACT_APP_API_URL;
 const apiKey = process.env.REACT_APP_API_KEY;
 
@@ -30,9 +28,31 @@ async function getUser(username) {
   }
 }
 
+async function updateUser(user, input) {
+  await fetch(`${apiURL}/translations/${user.id}`, {
+    method: "PATCH",
+    headers: {
+      "X-API-Key": apiKey,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      translations: [...user.translations, input],
+    }),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Could not update translations history");
+      }
+      return response.json();
+    })
+    .then((updatedUser) => {})
+    .catch((error) => {});
+}
+
 const apiHelper = {
   getUser,
   createUser,
+  updateUser,
 };
 
 export default apiHelper;
