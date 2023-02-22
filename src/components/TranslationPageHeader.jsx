@@ -3,6 +3,7 @@ import "./TranslationPage.css";
 import "./NavigationHeader.css";
 import { useUser } from "./UserContext";
 import "animate.css";
+import { Link } from "react-router-dom";
 
 function TranslationPageHeader(props) {
   const currentPage = props.currentPage;
@@ -34,12 +35,12 @@ function TranslationPageHeader(props) {
             </label>
             {currentPage === "translation" && (
               <div className="section-dropdown">
-                <a href="/">
-                  Profile <i className="uil uil-arrow-right"></i>
-                </a>
-                <a href="/logout">
-                  Logout <i className="uil uil-arrow-right"></i>
-                </a>
+                <Link to="/" className="uil uil-arrow-right">
+                  Profile
+                </Link>
+                <Link to="/logout" className="uil uil-arrow-right">
+                  Logout
+                </Link>
               </div>
             )}
           </div>
