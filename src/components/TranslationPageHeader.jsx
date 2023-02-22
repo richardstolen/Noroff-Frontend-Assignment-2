@@ -6,7 +6,7 @@ import "animate.css";
 
 function TranslationPageHeader(props) {
   const currentPage = props.currentPage;
-  const { user, setUser } = useUser();
+  const { user } = useUser();
   return (
     <>
       <div className="translation-header-row ">

@@ -1,5 +1,4 @@
 import React from "react";
-import uuid from "react-uuid";
 
 function TranslateOutput(props) {
   let translations = [];
@@ -18,7 +17,7 @@ function TranslateOutput(props) {
   }
 
   const translationsList = translations.map((t, i) => (
-    <img className="translationImage" key={i} src={t}></img>
+    <img className="translationImage" key={i} src={t} alt=""></img>
   ));
 
   return (

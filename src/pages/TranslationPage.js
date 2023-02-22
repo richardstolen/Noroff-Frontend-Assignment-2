@@ -1,16 +1,13 @@
 import React, { useState } from "react";
 import TranslateInput from "../components/TranslateInput.jsx";
 import TranslateOutput from "../components/TranslateOutput";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import TranslateAPI, { getTranslationByUsername } from "../api/TranslateAPI";
+import TranslateAPI from "../api/TranslateAPI";
 import { useUser } from "../components/UserContext";
 import TranslationPageHeader from "../components/TranslationPageHeader.jsx";
 
 function TranslationPage() {
   const [input, setInput] = useState("");
-  const { user, setUser } = useUser();
+  const { user } = useUser();
 
   function submit(event, input) {
     event.preventDefault();

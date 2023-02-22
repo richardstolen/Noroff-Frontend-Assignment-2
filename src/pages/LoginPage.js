@@ -1,14 +1,14 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import InputGroup from "react-bootstrap/InputGroup";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "../App.css";
 import { useUser } from "../components/UserContext";
-import { createUser, loginUser } from "../api/LoginAPI";
+import { loginUser } from "../api/LoginAPI";
 import LoginPageHeader from "../components/LoginPageHeader";
 
 function LoginPage() {
-  const { user, setUser } = useUser();
+  const { setUser } = useUser();
 
   const [input, setInput] = useState("");
 

@@ -8,7 +8,9 @@ function Logout() {
     console.log("logout");
     setUser(null);
     sessionStorage.clear();
-  }, []);
+  });
+
+  return <></>;
 }
 
 export default Logout;
