@@ -40,9 +40,6 @@ function TranslationPageHeader(props) {
                 <a href="/logout">
                   Logout <i className="uil uil-arrow-right"></i>
                 </a>
-                <a href="#">
-                  Link <i className="uil uil-arrow-right"></i>
-                </a>
               </div>
             )}
           </div>
