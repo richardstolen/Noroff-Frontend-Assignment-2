@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import InputGroup from "react-bootstrap/InputGroup";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import "../App.css";
-import { useUser } from "../components/UserContext";
-import { loginUser } from "../api/LoginAPI";
-import LoginPageHeader from "../components/LoginPageHeader";
+import "../../App.css";
+
+import { useUser } from "../../components/UserContext";
+import { loginUser } from "../../api/LoginAPI";
+import LoginPageHeader from "./LoginPageHeader";
 import { useNavigate } from "react-router";
 
 function LoginPage() {

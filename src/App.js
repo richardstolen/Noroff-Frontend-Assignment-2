@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "./App.css";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import TranslationPage from "./pages/TranslationPage";
-import LoginPage from "./pages/LoginPage";
+import LoginPage from "./pages/login/LoginPage";
 import { useUser } from "./components/UserContext";
 import Logout from "./components/Logout";
 import ProfilePage from "./pages/ProfilePage";

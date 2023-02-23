@@ -7,7 +7,7 @@ function LoginPageHeader() {
       <div className="login-header-column-image animate__animated animate__bounceInLeft">
         <img
           id="loginPageBear"
-          src={require("../assets/bear_big.png")}
+          src={require("../../assets/bear_big.png")}
           alt="not found"
         />
       </div>
