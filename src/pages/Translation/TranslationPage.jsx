@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import TranslateInput from "../components/TranslateInput.jsx";
-import TranslateOutput from "../components/TranslateOutput";
-import TranslateAPI from "../api/TranslateAPI";
-import { useUser } from "../components/UserContext";
-import TranslationPageHeader from "../components/TranslationPageHeader.jsx";
+import TranslateInput from "./TranslateInput.jsx";
+import TranslateOutput from "./TranslateOutput";
+import TranslateAPI from "../../api/TranslateAPI";
+import { useUser } from "../../components/UserContext";
+import TranslationPageHeader from "./TranslationPageHeader.jsx";
 
 function TranslationPage() {
   const [input, setInput] = useState("");

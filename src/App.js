@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import "./App.css";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import TranslationPage from "./pages/TranslationPage";
-import LoginPage from "./pages/login/LoginPage";
+import TranslationPage from "./pages/Translation/TranslationPage";
+import LoginPage from "./pages/Login/LoginPage";
 import { useUser } from "./components/UserContext";
 import Logout from "./components/Logout";
-import ProfilePage from "./pages/ProfilePage";
+import ProfilePage from "./pages/Profile/ProfilePage";
 import apiHelper from "./api/apiHelper";
 
 function App() {

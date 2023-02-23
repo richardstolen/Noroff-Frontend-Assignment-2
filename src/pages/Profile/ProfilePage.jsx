@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { useUser } from "../components/UserContext";
-import API from "../api/apiHelper";
+import { useUser } from "../../components/UserContext";
+import API from "../../api/apiHelper";
 import { useEffect } from "react";
-import TranslationPageHeader from "../components/TranslationPageHeader.jsx";
+import TranslationPageHeader from "../Translation/TranslationPageHeader.jsx";
 
 export const storageSave = (key, value) => {
   //validateKey(key);

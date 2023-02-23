@@ -1,7 +1,7 @@
 import React from "react";
 import "./TranslationPage.css";
 import "./NavigationHeader.css";
-import { useUser } from "./UserContext";
+import { useUser } from "../../components/UserContext";
 import "animate.css";
 import { Link } from "react-router-dom";
 
@@ -14,7 +14,7 @@ function TranslationPageHeader(props) {
         <div className="translation-header-column-image animate__animated animate__bounce">
           <img
             id="translationPageBear"
-            src={require("../assets/bear_big.png")}
+            src={require("../../assets/bear_big.png")}
             alt="not found"
           />
         </div>

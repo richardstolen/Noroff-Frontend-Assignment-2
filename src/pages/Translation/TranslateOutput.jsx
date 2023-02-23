@@ -11,11 +11,13 @@ function TranslateOutput(props) {
     const letters = props.input.split("");
     for (const letter of letters) {
       if (letter === " ") {
-        require("../assets/individial_signs/empty.png");
-        translations.push(require("../assets/individial_signs/empty.png"));
+        require("../../assets/individial_signs/empty.png");
+        translations.push(require("../../assets/individial_signs/empty.png"));
       } else {
         translations.push(
-          require("../assets/individial_signs/" + letter.toLowerCase() + ".png")
+          require("../../assets/individial_signs/" +
+            letter.toLowerCase() +
+            ".png")
         );
       }
     }
