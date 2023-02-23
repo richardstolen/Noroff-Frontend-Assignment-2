@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Comic Sans MS";
+}
+
+body {
+  background: linear-gradient(
+    to top,
+    #c6ebbe,
+    #c6ebbe 60%,
+    #7ca5b8 65%,
+    #7ca5b8
+  );
+  background-attachment: fixed;
+  z-index: 1;
+}
+
+.input-group {
+  display: flex;
+  width: 620px;
+  padding: 4px;
+  padding-left: 20px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 30px;
+  box-shadow: inset 0px 0px 0px 10px #ecf0f1;
+  border: 20px solid #ecf0f1;
+  border-radius: 30px;
+  padding: 0px;
+}
+
+.form-control {
+  width: 100%;
+  height: 55px;
+  background: none;
+  border: 0;
+  padding: 0;
+  outline: none;
+  color: white;
+  font-size: 25px;
+  padding-left: 20px;
+  padding-right: 65px;
+  background-color: #3b97d3;
+  border-radius: 50px;
+  border: 1px solid #ffc5dd;
+}
+
+#button-addon2 {
+  position: absolute;
+  height: 45px;
+  width: 48px;
+  background-color: #ecf0f1;
+  border-style: none;
+  border-radius: 50px;
+  margin-left: 555px;
+  cursor: pointer;
+}
+
+.translationImages {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  margin: 0px auto;
+  margin-top: 5%;
+  width: 700px;
+}
+
+.translationImage {
+  width: 70px;
+}
+
+#translationPageBear {
+  display: flex;
+  position: fixed;
+  width: 130px;
+  z-index: -1;
+  top: 2%;
+  left: 24%;
+  right: 0;
+  transform: rotate(-12deg);
+}
+
+.arrow {
+  width: 35px;
+  height: 25px;
+  display: grid;
+  overflow: hidden;
+  margin-left: 17%;
+}
+.arrow:before,
+.arrow:after {
+  content: "";
+  grid-area: 1/1;
+  background: #3b97d3;
+  clip-path: polygon(
+    0 10px,
+    calc(100% - 15px) 10px,
+    calc(100% - 15px) 0,
+    100% 50%,
+    calc(100% - 15px) 100%,
+    calc(100% - 15px) calc(100% - 10px),
+    0 calc(100% - 10px)
+  );
+}
+.arrow:hover:before,
+.arrow:hover:after {
+  animation: arrow 1s infinite;
+  transform: translate(calc(0% + var(--s, 0%)));
+}
+
+.arrow:hover:after {
+  --s: -100%;
+}
+
+@keyframes arrow {
+  80%,
+  100% {
+    transform: translate(calc(100% + var(--s, 0%)));
+  }
+}

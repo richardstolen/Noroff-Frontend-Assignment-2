@@ -1,0 +1,65 @@
+body {
+  background: linear-gradient(
+    to top,
+    #c6ebbe,
+    #c6ebbe 50%,
+    #7ca5b8 60%,
+    #7ca5b8
+  );
+  background-attachment: fixed;
+  z-index: 1;
+}
+
+.translation-header-row {
+  display: flex;
+  flex-direction: row;
+  width: 1250px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.translation-header-column-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100px;
+}
+
+.translation-header-column-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 25px;
+  width: 300px;
+}
+.translation-header-column-username {
+  margin: auto;
+  margin-right: -550px;
+  font-size: 25px;
+  color: white;
+}
+.translation-header-column-navbar {
+  margin: auto;
+  margin-right: 70px;
+}
+
+.row-1 {
+  color: white;
+  font-size: 30px;
+}
+
+#translationPageBear {
+  display: flex;
+  z-index: -1;
+  width: 70px;
+  position: relative;
+  margin-bottom: -5px;
+  transform: rotate(-12deg);
+  /* 
+    
+    top: 1px;
+   
+    right: 0;
+     */
+}

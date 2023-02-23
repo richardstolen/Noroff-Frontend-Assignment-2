@@ -1,30 +1,39 @@
-function App() {
-  const apiURL = "https://rs-lost-in-translation-api-production.up.railway.app";
-  const apiKey =
-    "uaxHSSnPmAp7LlijwMDezv2WXYbg1zx25YSdlzdB7zrOc83KvXE09y2ueIm5QCtV";
+import React, { useEffect } from "react";
+import "./App.css";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import TranslationPage from "./pages/TranslationPage";
+import LoginPage from "./pages/LoginPage";
+import { useUser } from "./components/UserContext";
+import Logout from "./components/Logout";
+import ProfilePage from "./pages/ProfilePage";
+import apiHelper from "./api/apiHelper";
 
-  fetch(`${apiURL}/translations`, {
-    method: "POST",
-    headers: {
-      "X-API-Key": apiKey,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      username: "mega-mind",
-      translations: [],
-    }),
-  })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Could not create new user");
-      }
-      console.log(response.json());
-    })
-    .then((newUser) => {
-      // newUser is the new user with an id
-    })
-    .catch((error) => {});
-  return <div className="App"></div>;
+function App() {
+  const navigate = useNavigate();
+  const { user, setUser } = useUser();
+  const sessionUser = sessionStorage.getItem("user");
+
+  useEffect(() => {
+    if (!sessionUser) {
+      setUser(sessionUser);
+
+      navigate("/login");
+    } else {
+      setUser(sessionUser);
+    }
+  }, [user, sessionUser, setUser, navigate]);
+
+  return (
+    <div className="App">
+      <Routes>
+        <Route path="/logout" element={<Logout />} />
+        <Route path="/" element={<TranslationPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="*" element={<LoginPage />} />
+      </Routes>
+    </div>
+  );
 }
 
 export default App;
