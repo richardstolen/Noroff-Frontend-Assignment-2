@@ -13,7 +13,7 @@ function TranslationPageHeader(props) {
       <div className="translation-header-row ">
         <div className="translation-header-column-image animate__animated animate__bounce">
           <img
-            id="translationPageBear"
+            id="translationPageHeaderBear"
             src={require("../../assets/bear_big.png")}
             alt="not found"
           />

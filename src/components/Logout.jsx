@@ -5,7 +5,6 @@ function Logout() {
   const { setUser } = useUser();
 
   useEffect(() => {
-    console.log("logout");
     setUser(null);
     sessionStorage.clear();
   });

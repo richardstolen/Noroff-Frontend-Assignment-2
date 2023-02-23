@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import InputGroup from "react-bootstrap/InputGroup";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import "../../App.css";
 import "animate.css";
 
 function TranslateInput(props) {

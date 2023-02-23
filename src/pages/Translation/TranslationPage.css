@@ -1,14 +1,58 @@
-body {
-  background: linear-gradient(
-    to top,
-    #c6ebbe,
-    #c6ebbe 50%,
-    #7ca5b8 60%,
-    #7ca5b8
-  );
-  background-attachment: fixed;
-  z-index: 1;
+@media (max-height: 800px) {
+  body {
+    background: linear-gradient(
+      to top,
+      #c6ebbe,
+      #c6ebbe 50%,
+      #7ca5b8 60%,
+      #7ca5b8
+    );
+    background-attachment: fixed;
+    z-index: 1;
+  }
 }
+
+@media (min-height: 800px) {
+  body {
+    background: linear-gradient(
+      to top,
+      #c6ebbe,
+      #c6ebbe 67%,
+      #7ca5b8 77%,
+      #7ca5b8
+    );
+    background-attachment: fixed;
+    z-index: 1;
+  }
+}
+
+.translationImages {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  margin: 0px auto;
+  margin-top: 5%;
+  width: 700px;
+}
+
+.translationImage {
+  width: 70px;
+}
+
+#translationPageBear {
+  display: flex;
+  position: fixed;
+  width: 130px;
+  z-index: -1;
+  top: 2%;
+  left: 24%;
+  right: 0;
+  transform: rotate(-12deg);
+}
+
+/**
+    Header CSS
+*/
 
 .translation-header-row {
   display: flex;
@@ -49,17 +93,11 @@ body {
   font-size: 30px;
 }
 
-#translationPageBear {
+#translationPageHeaderBear {
   display: flex;
   z-index: -1;
   width: 70px;
   position: relative;
   margin-bottom: -5px;
   transform: rotate(-12deg);
-  /* 
-    
-    top: 1px;
-   
-    right: 0;
-     */
 }

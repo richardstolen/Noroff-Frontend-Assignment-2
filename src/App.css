@@ -4,18 +4,6 @@
   font-family: "Comic Sans MS";
 }
 
-body {
-  background: linear-gradient(
-    to top,
-    #c6ebbe,
-    #c6ebbe 60%,
-    #7ca5b8 65%,
-    #7ca5b8
-  );
-  background-attachment: fixed;
-  z-index: 1;
-}
-
 .input-group {
   display: flex;
   width: 620px;
@@ -56,30 +44,6 @@ body {
   border-radius: 50px;
   margin-left: 555px;
   cursor: pointer;
-}
-
-.translationImages {
-  display: flex;
-  flex-wrap: wrap;
-  text-align: center;
-  margin: 0px auto;
-  margin-top: 5%;
-  width: 700px;
-}
-
-.translationImage {
-  width: 70px;
-}
-
-#translationPageBear {
-  display: flex;
-  position: fixed;
-  width: 130px;
-  z-index: -1;
-  top: 2%;
-  left: 24%;
-  right: 0;
-  transform: rotate(-12deg);
 }
 
 .arrow {

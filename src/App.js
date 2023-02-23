@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
-import "./App.css";
 import { Routes, Route, useNavigate } from "react-router-dom";
+import { useUser } from "./components/UserContext";
 import TranslationPage from "./pages/Translation/TranslationPage";
 import LoginPage from "./pages/Login/LoginPage";
-import { useUser } from "./components/UserContext";
 import Logout from "./components/Logout";
 import ProfilePage from "./pages/Profile/ProfilePage";
-import apiHelper from "./api/apiHelper";
+import "./App.css";
 
 function App() {
   const navigate = useNavigate();
