@@ -5,6 +5,8 @@ import TranslationPage from "./pages/TranslationPage";
 import LoginPage from "./pages/LoginPage";
 import { useUser } from "./components/UserContext";
 import Logout from "./components/Logout";
+import ProfilePage from "./pages/ProfilePage";
+import apiHelper from "./api/apiHelper";
 
 function App() {
   const navigate = useNavigate();
@@ -18,7 +20,6 @@ function App() {
       navigate("/login");
     } else {
       setUser(sessionUser);
-      navigate("/");
     }
   }, [user, sessionUser, setUser, navigate]);
 
@@ -28,6 +29,7 @@ function App() {
         <Route path="/logout" element={<Logout />} />
         <Route path="/" element={<TranslationPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
         <Route path="*" element={<LoginPage />} />
       </Routes>
     </div>

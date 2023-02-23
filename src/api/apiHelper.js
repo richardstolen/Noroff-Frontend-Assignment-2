@@ -49,10 +49,38 @@ async function updateUser(user, input) {
     .catch((error) => {});
 }
 
+async function clearHistory(user) {
+  if (user.translations.length < 10) {
+    user.translations = [];
+  } else {
+    user.translations.splice(user.translations.length - 10, 10);
+  }
+
+  await fetch(`${apiURL}/translations/${user.id}`, {
+    method: "PATCH",
+    headers: {
+      "X-API-Key": apiKey,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      translations: [...user.translations],
+    }),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Could not update translations history");
+      }
+      return response.json();
+    })
+    .then((updatedUser) => {})
+    .catch((error) => {});
+}
+
 const apiHelper = {
   getUser,
   createUser,
   updateUser,
+  clearHistory,
 };
 
 export default apiHelper;

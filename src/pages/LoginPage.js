@@ -6,8 +6,10 @@ import "../App.css";
 import { useUser } from "../components/UserContext";
 import { loginUser } from "../api/LoginAPI";
 import LoginPageHeader from "../components/LoginPageHeader";
+import { useNavigate } from "react-router";
 
 function LoginPage() {
+  const navigate = useNavigate();
   const { setUser } = useUser();
 
   const [input, setInput] = useState("");
@@ -22,6 +24,7 @@ function LoginPage() {
       } else {
         setUser(userObject.username);
         sessionStorage.setItem("user", userObject.username);
+        navigate("/");
       }
     } else {
       alert("Invalid input");

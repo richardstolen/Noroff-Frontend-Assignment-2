@@ -36,6 +36,9 @@ function TranslationPageHeader(props) {
             {currentPage === "translation" && (
               <div className="section-dropdown">
                 <Link to="/" className="uil uil-arrow-right">
+                  Home
+                </Link>
+                <Link to="/profile" className="uil uil-arrow-right">
                   Profile
                 </Link>
                 <Link to="/logout" className="uil uil-arrow-right">
