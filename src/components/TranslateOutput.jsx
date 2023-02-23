@@ -1,5 +1,10 @@
 import React from "react";
 
+/**
+ *
+ * @param {*} props
+ * @returns
+ */
 function TranslateOutput(props) {
   let translations = [];
   if (props.input) {

@@ -73,7 +73,10 @@ const ProfileHistory = (props) => {
   translationsList.reverse();
 
   const onDelete = async (e) => {
+    e.preventDefault();
+
     await API.clearHistory(user);
+    window.location.reload(false);
   };
   return (
     <div id="profile-history">
