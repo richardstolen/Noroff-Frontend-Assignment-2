@@ -110,3 +110,8 @@ a:hover {
 a .uil {
   font-size: 22px;
 }
+
+.disabled:hover {
+  background-color: white;
+  opacity: 0.1;
+}
