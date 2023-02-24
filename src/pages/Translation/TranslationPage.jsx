@@ -5,10 +5,15 @@ import TranslateOutput from "./TranslateOutput";
 import TranslateAPI from "../../api/TranslateAPI";
 import TranslationPageHeader from "./TranslationPageHeader.jsx";
 
+/**
+ * Component for organizing the Translation Page.
+ * @returns Translation Page
+ */
 function TranslationPage() {
   const [input, setInput] = useState("");
   const { user } = useUser();
 
+  // Function for handling the input and sending it to API
   function submit(event, input) {
     event.preventDefault();
     let regex = /^[a-zA-Z ]*$/;

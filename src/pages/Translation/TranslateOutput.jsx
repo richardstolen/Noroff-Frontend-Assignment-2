@@ -1,9 +1,9 @@
 import React from "react";
 
 /**
- *
+ * Component for handling the output of the translations.
  * @param {*} props
- * @returns
+ * @returns The input translated to ASL.
  */
 function TranslateOutput(props) {
   let translations = [];

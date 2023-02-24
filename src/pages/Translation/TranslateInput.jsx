@@ -4,6 +4,11 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "animate.css";
 
+/**
+ * Component for handling the input the user wants to translate.
+ * @param {*} props
+ * @returns A input form.
+ */
 function TranslateInput(props) {
   const [input, setInput] = useState("");
 

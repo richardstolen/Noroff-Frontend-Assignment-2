@@ -5,6 +5,12 @@ import { useUser } from "../../components/UserContext";
 import "animate.css";
 import { Link } from "react-router-dom";
 
+/**
+ * Component for the header that is used on the Translation-
+ * and Profile page.
+ * @param {*} props
+ * @returns A header.
+ */
 function TranslationPageHeader(props) {
   const currentPage = props.currentPage;
   const { user } = useUser();
