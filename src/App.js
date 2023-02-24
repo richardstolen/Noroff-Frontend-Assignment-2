@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { useUser } from "./components/UserContext";
 import TranslationPage from "./pages/Translation/TranslationPage";
-import LoginPage from "./pages/Login/LoginPage.jsx";
 import Logout from "./components/Logout";
 import ProfilePage from "./pages/Profile/ProfilePage";
 import "./App.css";
+import LoginPage from "./pages/login/LoginPage";
 
 function App() {
   const navigate = useNavigate();
