@@ -1,5 +1,8 @@
 import React, { createContext, useState, useContext } from "react";
 
+/**
+ * Context provider for User
+ */
 const UserContext = createContext();
 
 export const useUser = () => {

@@ -9,17 +9,22 @@ import { loginUser } from "../../api/LoginAPI";
 import LoginPageHeader from "./LoginPageHeader";
 import { useNavigate } from "react-router";
 
+/**
+ * Component for rendering the login page.
+ * Includes a input form and a header.
+ * @returns Login Page.
+ */
 function LoginPage() {
   const navigate = useNavigate();
   const { setUser } = useUser();
 
   const [input, setInput] = useState("");
 
+  // Function for logging in
   async function login(e, usernameInput) {
     e.preventDefault();
     if (usernameInput) {
       let userObject = await loginUser(usernameInput);
-
       if (!userObject) {
         alert("Something went wrong, try again!");
       } else {

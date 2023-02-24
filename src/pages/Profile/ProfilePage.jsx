@@ -7,18 +7,15 @@ import { useNavigate } from "react-router-dom";
 import "./ProfilePage.css";
 import "animate.css";
 
-export const storageSave = (key, value) => {
-  //validateKey(key);
-
-  if (!value) {
-    throw new Error("storageSave: No value provided for " + key);
-  }
-  sessionStorage.setItem(key, JSON.stringify(value)); //Stringify fordi application<localstorage<key: value - value kan bare være string, ikke object
-};
-
-function ProfilePage(props) {
+/**
+ * Component for rendering the Profile Page.
+ * Includes the history for the user.
+ * @returns ProfilePage
+ */
+function ProfilePage() {
   const [userObject, setUserObject] = useState();
 
+  // Getting the user object
   useEffect(() => {
     (async () => {
       const getUser = await GetUser(sessionStorage.getItem("user"));
@@ -37,49 +34,28 @@ function ProfilePage(props) {
   return (
     <>
       <TranslationPageHeader currentPage={"translation"} />
-
       <ProfileHistory user={userObject}></ProfileHistory>
     </>
   );
 }
 
-const ProfileActions = () => {
-  const { user, setUser } = useUser();
-
-  const handleLogoutClick = () => {
-    if (window.confirm("Are you sure?")) {
-      // add logic to handle logout
-    }
-  };
-};
-
-const handleClearHistoryClick = async () => {
-  if (!window.confirm("Are you sure\nThis cannot be undone.")) {
-    return;
-  }
-  //const [clearError] = await orderClearHistory(user.id)
-  //if (clearError !== null) {
-  //    return
-  //}
-
-  //   const updatedUser = {
-  //     ...user,
-  //     orders: [],
-  //   };
-  //   storageSave(updatedUser);
-  //   setUser(updatedUser);
-};
-
+/**
+ * Component for displaying the history,
+ * and displaying the delete history button.
+ * @param {*} props - the User.
+ * @returns
+ */
 const ProfileHistory = (props) => {
   const user = props.user;
   const navigate = useNavigate();
 
+  // Mapping the list of translations to p tags and reversing to get the latest first
   const translationsList = user.translations.map((t, i) => <p key={i}>{t}</p>);
   translationsList.reverse();
 
+  // Function to clear history
   const onDelete = async (e) => {
     e.preventDefault();
-
     await API.clearHistory(user);
     navigate("/profile");
   };

@@ -14,8 +14,8 @@ function App() {
 
   useEffect(() => {
     if (!sessionUser) {
+      // If no user in storage, redirect to login page
       setUser(sessionUser);
-
       navigate("/login");
     } else {
       setUser(sessionUser);

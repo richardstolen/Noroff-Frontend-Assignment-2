@@ -1,6 +1,11 @@
 import React from "react";
 import "./LoginPage.css";
 
+/**
+ * Component for the login page header.
+ * Includes a cute bear.
+ * @returns Login Page Header
+ */
 function LoginPageHeader() {
   return (
     <div className="login-header-row">
@@ -13,7 +18,6 @@ function LoginPageHeader() {
       </div>
       <div className="login-header-column-text animate__animated animate__fadeIn">
         <div className="row-1">Lost in translation</div>
-
         <div className="row-2">Get started</div>
       </div>
     </div>
