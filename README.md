@@ -1,6 +1,6 @@
 <div align="center">
     <h1>Noroff Frontend Assignment 2: Lost in Translation</h1>
-    
+     <img src="src/assets/bear_small.png" width="128" alt="BEAR">
 </div>
 
 [![license](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -9,9 +9,11 @@
 ## Background information
 The purpose of this project is to build an online sign language translator as a Single Page Application using the React framework.
 
-## Install
-To run on local computer download and install: 
-* [Visual Studio Code](https://code.visualstudio.com/download)
+## Visit deployed page
+
+This project has been deployed with [Netlify](https://www.netlify.com/). Webpage link:
+
+    https://richard-anne-frontend-assignment-2.netlify.app
 
 ## Maintainers
 
