@@ -5,11 +5,12 @@ function Logout() {
   const { setUser } = useUser();
 
   useEffect(() => {
+    console.log("logout");
     setUser(null);
     sessionStorage.clear();
   });
 
-  return <></>;
+  return <div>Logged out</div>;
 }
 
 export default Logout;
