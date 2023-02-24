@@ -4,6 +4,8 @@ import API from "../../api/apiHelper";
 import { useEffect } from "react";
 import TranslationPageHeader from "../Translation/TranslationPageHeader.jsx";
 import { useNavigate } from "react-router-dom";
+import "./ProfilePage.css";
+import "animate.css";
 
 export const storageSave = (key, value) => {
   //validateKey(key);
@@ -28,13 +30,14 @@ function ProfilePage(props) {
     return (
       <>
         <TranslationPageHeader currentPage={"translation"} />
-        <div>Loading...</div>
+        <div className="delete-button">Loading...</div>
       </>
     );
 
   return (
     <>
       <TranslationPageHeader currentPage={"translation"} />
+
       <ProfileHistory user={userObject}></ProfileHistory>
     </>
   );
@@ -81,13 +84,19 @@ const ProfileHistory = (props) => {
     navigate("/profile");
   };
   return (
-    <div id="profile-history">
-      <h3>Here are your latest translations</h3>
-      <div>{translationsList.slice(0, 10)}</div>
-      <form onSubmit={(e) => onDelete(e)}>
-        <button>Delete history</button>
-      </form>
-    </div>
+    <>
+      <div className="delete-button animate__animated animate__fadeIn">
+        <form onSubmit={(e) => onDelete(e)}>
+          <button>Delete history</button>
+        </form>
+      </div>
+      <div className="profile-page animate__animated animate__fadeIn">
+        <div className="history">
+          <h3>Here are your 10 latest translations</h3>
+          <div className="history-element">{translationsList.slice(0, 10)}</div>
+        </div>
+      </div>
+    </>
   );
 };
 

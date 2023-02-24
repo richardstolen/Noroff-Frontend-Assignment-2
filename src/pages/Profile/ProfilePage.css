@@ -1,0 +1,43 @@
+.profile-page {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin: auto;
+  margin-top: 1%;
+  width: 650px;
+  min-height: 400px;
+  background-color: white;
+  border-radius: 30px;
+}
+
+.history {
+  margin-left: 5%;
+  margin-top: 2%;
+}
+
+.history-element {
+  font-size: 23px;
+  margin-top: 6%;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+.delete-button {
+  display: flex;
+  margin-top: -1%;
+  justify-content: center;
+}
+
+.delete-button button {
+  height: 40px;
+  width: 150px;
+  background-color: #ecf0f1;
+  border-radius: 20px;
+  font-size: 18px;
+}
+
+.delete-button button:hover {
+  background-color: #c6ebbe;
+}

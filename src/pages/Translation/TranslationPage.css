@@ -7,8 +7,8 @@
     background: linear-gradient(
       to top,
       #c6ebbe,
-      #c6ebbe 50%,
-      #7ca5b8 60%,
+      #c6ebbe 55%,
+      #7ca5b8 65%,
       #7ca5b8
     );
     background-attachment: fixed;
@@ -87,7 +87,7 @@
 }
 .translation-header-column-username {
   margin: auto;
-  margin-right: -550px;
+  margin-right: -530px;
   font-size: 25px;
   color: white;
 }
