@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useUser } from "./UserContext";
 
 function Logout() {
@@ -10,7 +11,7 @@ function Logout() {
     sessionStorage.clear();
   });
 
-  return <div>Logged out</div>;
+  return <Link to="/"></Link>;
 }
 
 export default Logout;
