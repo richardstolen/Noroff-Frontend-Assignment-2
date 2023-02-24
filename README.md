@@ -15,8 +15,7 @@ To run on local computer download and install:
 
 ## Maintainers
 
-[@Richard Stølen](https://gitlab.com/richardstolen)
-[@Anne Jacobsen Rike] (https://gitlab.com/AnneRike)
+[@Richard Stølen](https://gitlab.com/richardstolen) 
 
 ## Contributing
 
