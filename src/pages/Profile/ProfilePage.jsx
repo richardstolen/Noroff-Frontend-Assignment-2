@@ -3,6 +3,7 @@ import { useUser } from "../../components/UserContext";
 import API from "../../api/apiHelper";
 import { useEffect } from "react";
 import TranslationPageHeader from "../Translation/TranslationPageHeader.jsx";
+import { useNavigate } from "react-router-dom";
 
 export const storageSave = (key, value) => {
   //validateKey(key);
@@ -68,6 +69,7 @@ const handleClearHistoryClick = async () => {
 
 const ProfileHistory = (props) => {
   const user = props.user;
+  const navigate = useNavigate();
 
   const translationsList = user.translations.map((t, i) => <p key={i}>{t}</p>);
   translationsList.reverse();
@@ -76,7 +78,7 @@ const ProfileHistory = (props) => {
     e.preventDefault();
 
     await API.clearHistory(user);
-    window.location.reload(false);
+    navigate("/profile");
   };
   return (
     <div id="profile-history">
